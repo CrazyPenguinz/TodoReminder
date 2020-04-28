@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostItAdapter extends RecyclerView.Adapter<PostItAdapter.NoteHolder> {
-    private OnItemClickListner listner;
+    private OnItemClickListener listener;
     private List<PostIt> postIts = new ArrayList<>();
 
     @NonNull
@@ -30,7 +30,7 @@ public class PostItAdapter extends RecyclerView.Adapter<PostItAdapter.NoteHolder
     public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
         PostIt currentNote = postIts.get(position);
         holder.tv_title.setText(currentNote.getTitle());
-        holder.tv_location.setText(currentNote.getDescription());
+        holder.tv_location.setText(currentNote.getPlaceName());
         holder.tv_date.setText(currentNote.getDueDate());
     }
 
@@ -63,19 +63,19 @@ public class PostItAdapter extends RecyclerView.Adapter<PostItAdapter.NoteHolder
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    if (listner != null && position != RecyclerView.NO_POSITION) {
-                        listner.OnItemClick(postIts.get(position));
+                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                        listener.OnItemClick(postIts.get(position));
                     }
                 }
             });
         }
     }
 
-    public interface OnItemClickListner {
+    public interface OnItemClickListener {
         void OnItemClick(PostIt note);
     }
 
-    public void SetOnClickListner(OnItemClickListner listner) {
-        this.listner = listner;
+    public void SetOnClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 }

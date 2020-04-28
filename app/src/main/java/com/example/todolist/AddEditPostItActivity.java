@@ -86,7 +86,7 @@ public class AddEditPostItActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                et_date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                et_date.setText(String.format("%02d/%02d/%4d", dayOfMonth, (monthOfYear + 1), year));
                             }
                         }, year, month, day);
                 picker.show();

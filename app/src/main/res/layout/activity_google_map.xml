@@ -13,8 +13,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></fragment>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"></fragment>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/sv_location"
@@ -31,11 +33,18 @@
 
     <Button
         android:id="@+id/bt_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="370dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="600dp"
+        android:background="#cc2900"
         android:text="select"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/mapAPI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sv_location"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="322dp"></Button>
+        app:layout_constraintVertical_bias="0.157"
+        tools:ignore="MissingConstraints"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
